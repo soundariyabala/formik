@@ -1,0 +1,1 @@
+In this task ,Users able to add,edit and book and author records. Bookdetails records contain title,author,ISBN number and publication date.Author details contains anuthor's name, date of birth and Biography.Forms used in the dashboard to be validation using FORMIK.
