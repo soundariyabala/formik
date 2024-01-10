@@ -71,7 +71,7 @@ validationSchema:Yup.object({
                 <Form.Control type="text" placeholder="ISBNnumber" id="ISBNnumber" name="Books.ISBNnumber" onChange={formik.handleChange} value={formik.values.Books.ISBNnumber} onBlur={formik.handleBlur}/>
                 {formik.touched.Books?.ISBNnumber && formik.errors.Books?.ISBNnumber ?(<div style={{color:"red"}}>{formik.errors.Books.ISBNnumber}</div>) : null}&nbsp;
 
-                <Form.Control type="text" placeholder="publicationDate" id="publicationDate" name="Books.publicationDate" onChange={formik.handleChange} value={formik.values.Books.publicationDate} onBlur={formik.handleBlur}/>
+                <Form.Control type="date" placeholder="publicationDate" id="publicationDate" name="Books.publicationDate" onChange={formik.handleChange} value={formik.values.Books.publicationDate} onBlur={formik.handleBlur}/>
                 {formik.touched.Books?.publicationDate && formik.errors.Books?.publicationDate ?(<div style={{color:"red"}}>{formik.errors.Books.publicationDate}</div>) : null}&nbsp;
 
               </Form.Group>
@@ -84,7 +84,7 @@ validationSchema:Yup.object({
                 <Form.Control type="text" placeholder="authorsname" id="authorsname" name="Author.authorsname" onChange={formik.handleChange} value={formik.values.Author.authorsname} onBlur={formik.handleBlur}/>
                 {formik.touched.Author?.authorsname&& formik.errors.Author?.authorsname ?(<div style={{color:"red"}}>{formik.errors.Author.authorsname}</div>) : null}&nbsp;
 
-                <Form.Control type="text" placeholder="birthdate" id="birthdate" name="Author.birthdate" onChange={formik.handleChange} value={formik.values.Author.birthdate} onBlur={formik.handleBlur}/>
+                <Form.Control type="date" placeholder="birthdate" id="birthdate" name="Author.birthdate" onChange={formik.handleChange} value={formik.values.Author.birthdate} onBlur={formik.handleBlur}/>
                 {formik.touched.Author?.birthdate&& formik.errors.Author?.birthdate ?(<div style={{color:"red"}}>{formik.errors.Author.birthdate}</div>) : null}&nbsp;
 
                 <Form.Control type="text" placeholder="shortbio" id="shortbio" name="Author.shortbio" onChange={formik.handleChange} value={formik.values.Author.shortbio} onBlur={formik.handleBlur}/>
