@@ -119,7 +119,7 @@ useEffect(()=>{getUserData()},[])
               <Form.Group className="mb-3" >
                 <Form.Label>Author</Form.Label>
 
-                <Form.Control type="text" placeholder="authorsname" id="authorsname" name="Author.authorsname" onChange={formik.handleChange} value={formik.values.authorsname} onBlur={formik.handleBlur}/>
+                <Form.Control type="text" placeholder="authorsname" id="authorsname" name="Author.authorsname" onChange={formik.handleChange} value={formik.values.Author.authorsname} onBlur={formik.handleBlur}/>
                 {formik.touched.Author?.authorsname&& formik.errors.Author?.authorsname ?(<div style={{color:"red"}}>{formik.errors.Author.authorsname}</div>) : null}&nbsp;
 
                 <Form.Control type="date" placeholder="birthdate" id="birthdate" name="Author.birthdate" onChange={formik.handleChange} value={formik.values.Author.birthdate} onBlur={formik.handleBlur}/>
