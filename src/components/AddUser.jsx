@@ -28,12 +28,12 @@ validationSchema:Yup.object({
             title:Yup.string().required('Title is Required'),
             author:Yup.string().required('author is Required'),
             ISBNnumber:Yup.string().required('ISBN number required').matches(/^\d{13}$/,'Enter a valid ISBN No'),
-            publicationDate:Yup.string().required('Date is required')
+            publicationDate:Yup.date().max('2024-01-10','select lesser than current date')
         }),
 
         Author:Yup.object({
             authorsname:Yup.string().required('Authorsname is Required'),
-            birthdate:Yup.string().required('Dateofbirth id required'),
+            birthdate:Yup.date().max('2024-01-10','select lesser than current date'),
             shortbio:Yup.string().required('Enter a biography')
         })
           }),

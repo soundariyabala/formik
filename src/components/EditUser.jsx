@@ -60,12 +60,12 @@ validationSchema:Yup.object({
             title:Yup.string().required('Title is Required'),
             author:Yup.string().required('author is Required'),
             ISBNnumber:Yup.string().required('ISBN number required').matches(/^\d{13}$/,'Enter a valid ISBN No'),
-            publicationDate:Yup.string().required('Date is required')
+            publicationDate:Yup.date().max('2024-01-10','select lesser than current date')
         }),
 
         Author:Yup.object({
             authorsname:Yup.string().required('Authorsname is Required'),
-            birthdate:Yup.string().required('valid Dateofbirth '),
+            birthdate:Yup.date().max('2024-01-10','select lesser than current date'),
             shortbio:Yup.string().required('Enter a biography')
         })
           }),
@@ -109,7 +109,7 @@ useEffect(()=>{getUserData()},[])
                 <Form.Control type="text" placeholder="ISBNnumber" id="ISBNnumber" name="Books.ISBNnumber" onChange={formik.handleChange} value={formik.values.Books.ISBNnumber} onBlur={formik.handleBlur}/>
                 {formik.touched.Books?.ISBNnumber && formik.errors.Books?.ISBNnumber ?(<div style={{color:"red"}}>{formik.errors.Books.ISBNnumber}</div>) : null}&nbsp;
 
-                <Form.Control type="text" placeholder="publicationDate" id="publicationDate" name="Books.publicationDate" onChange={formik.handleChange} value={formik.values.Books.publicationDate} onBlur={formik.handleBlur}/>
+                <Form.Control type="date" placeholder="publicationDate" id="publicationDate" name="Books.publicationDate" onChange={formik.handleChange} value={formik.values.Books.publicationDate} onBlur={formik.handleBlur}/>
                 {formik.touched.Books?.publicationDate && formik.errors.Books?.publicationDate ?(<div style={{color:"red"}}>{formik.errors.Books.publicationDate}</div>) : null}&nbsp;
 
               </Form.Group>
@@ -122,7 +122,7 @@ useEffect(()=>{getUserData()},[])
                 <Form.Control type="text" placeholder="authorsname" id="authorsname" name="Author.authorsname" onChange={formik.handleChange} value={formik.values.authorsname} onBlur={formik.handleBlur}/>
                 {formik.touched.Author?.authorsname&& formik.errors.Author?.authorsname ?(<div style={{color:"red"}}>{formik.errors.Author.authorsname}</div>) : null}&nbsp;
 
-                <Form.Control type="text" placeholder="birthdate" id="birthdate" name="Author.birthdate" onChange={formik.handleChange} value={formik.values.Author.birthdate} onBlur={formik.handleBlur}/>
+                <Form.Control type="date" placeholder="birthdate" id="birthdate" name="Author.birthdate" onChange={formik.handleChange} value={formik.values.Author.birthdate} onBlur={formik.handleBlur}/>
                 {formik.touched.Author?.birthdate&& formik.errors.Author?.birthdate ?(<div style={{color:"red"}}>{formik.errors.Author.birthdate}</div>) : null}&nbsp;
 
                 <Form.Control type="text" placeholder="shortbio" id="shortbio" name="Author.shortbio" onChange={formik.handleChange} value={formik.values.Author.shortbio} onBlur={formik.handleBlur}/>
